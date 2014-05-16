@@ -5,11 +5,12 @@
 	<head>
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'curso.label', default: 'Curso')}" />
-		<title><g:message code="default.show.label" args="[entityName]" /></title>
+		<title>Información Curso</title>
+                <link rel="stylesheet" href="${resource(dir: 'css', file: 'style.css')}">
 	</head>
 	<body>
 		<a href="#show-curso" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div class="nav" role="navigation">
+		<div class="nav" role="navigation" id="menu_opciones">
 			<ul>
 				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
 				<li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
@@ -17,12 +18,12 @@
 			</ul>
 		</div>
 		<div id="show-curso" class="content scaffold-show" role="main">
-			<h1><g:message code="default.show.label" args="[entityName]" /></h1>
+			<h1>Información Curso</h1>
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
-			<ol class="property-list curso">
-			
+			<ol class="property-list curso" id="info">
+                                <h2 class="show-h2">Información del curso</h2>
 				<g:if test="${cursoInstance?.nivelCurso}">
 				<li class="fieldcontain">
 					<span id="nivelCurso-label" class="property-label"><g:message code="curso.nivelCurso.label" default="Nivel Curso" /></span>
@@ -80,7 +81,7 @@
 				</g:if>
 			
 			</ol>
-			<g:form url="[resource:cursoInstance, action:'delete']" method="DELETE">
+			<g:form url="[resource:cursoInstance, action:'delete']" method="DELETE" id="form-registro">
 				<fieldset class="buttons">
 					<g:link class="edit" action="edit" resource="${cursoInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
 					<g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />

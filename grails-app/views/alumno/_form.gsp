@@ -1,7 +1,9 @@
 <%@ page import="escuela.Alumno" %>
 
 
-
+<div>
+    <p class="instrucciones">Ingrese sus datos</p>
+</div>
 <div class="fieldcontain ${hasErrors(bean: alumnoInstance, field: 'correoElectronico', 'error')} required">
 	<label for="correoElectronico">
 		<g:message code="alumno.correoElectronico.label" default="Correo Electronico" />
@@ -13,7 +15,7 @@
 <div class="fieldcontain ${hasErrors(bean: alumnoInstance, field: 'password', 'error')} required">
 	<label for="password">
 		<g:message code="alumno.password.label" default="Password" />
-		<span class="required-indicator">*</span>
+		<span class="required-indicator">*</span><span class="mensaje"> Min 5, Max 15 caractéres</span>
 	</label>
 	<g:field type="password" name="password" maxlength="15" required="" value="${alumnoInstance?.password}"/>
 </div>

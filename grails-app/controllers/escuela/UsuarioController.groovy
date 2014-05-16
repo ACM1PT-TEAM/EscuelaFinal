@@ -36,13 +36,13 @@ class UsuarioController {
 				def alumno = Alumno.findByCorreoElectronicoAndPassword(params.login,params.password)
 				session.alumno = alumno
 				flash.message = "Hola ${user.nombre}!"
-				redirect(controller:"alumno", action:"index")
+				redirect(controller:"alumno", action:"principal_alumno")
 			}
 			if(user.tipoUsuario=="profesor"){
 				def profesor = Profesor.findByCorreoElectronicoAndPassword(params.login,params.password)
 				session.profesor = profesor
 				flash.message = "Hola Profesor ${user.nombre}!"
-				redirect(controller:"profesor", action:"index")
+				redirect(controller:"profesor", action:"principal_profesor")
 			}
 		}else{
 			flash.message =	"El login o el password introducido no fue encontrado en el sistema."

@@ -1,6 +1,8 @@
 <%@ page import="escuela.Peticion" %>
 
-
+<div>
+    <p class="instrucciones">Seleccione los campos</p>
+</div>
 
 <div class="fieldcontain ${hasErrors(bean: peticionInstance, field: 'nivelCurso', 'error')} ">
 	<label for="nivelCurso">

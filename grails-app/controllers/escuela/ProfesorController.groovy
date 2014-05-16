@@ -15,10 +15,18 @@ class ProfesorController {
         respond Profesor.list(params), model:[profesorInstanceCount: Profesor.count()]
     }
 
+     def principal_profesor() {
+        respond Profesor.list(params), model:[profesorInstanceCount: Profesor.count()]
+    }
+    
     def show(Profesor profesorInstance) {
         respond profesorInstance
     }
-
+    
+    def show_global(Profesor profesorInstance) {
+        respond profesorInstance
+    }
+    
     def create() {
         respond new Profesor(params)
     }

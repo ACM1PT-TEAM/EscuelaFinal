@@ -1,7 +1,9 @@
 <%@ page import="escuela.Curso" %>
 
 
-
+<div>
+    <p class="instrucciones">Seleccione los campos</p>
+</div>
 <div class="fieldcontain ${hasErrors(bean: cursoInstance, field: 'nivelCurso', 'error')} required">
 	<label for="nivelCurso">
 		<g:message code="curso.nivelCurso.label" default="Nivel Curso" />

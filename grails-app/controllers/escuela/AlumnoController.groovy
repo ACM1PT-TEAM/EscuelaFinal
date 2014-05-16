@@ -14,7 +14,11 @@ class AlumnoController {
         params.max = Math.min(max ?: 10, 100)
         respond Alumno.list(params), model:[alumnoInstanceCount: Alumno.count()]
     }
-
+    
+    def principal_alumno(){
+        respond Alumno.list(params), model:[alumnoInstanceCount: Alumno.count()]
+    }
+    
     def show(Alumno alumnoInstance) {
         respond alumnoInstance
     }

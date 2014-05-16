@@ -60,7 +60,7 @@ class PeticionAlumnoController {
             form {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'peticionAlumnoInstance.label', default: 'PeticionAlumno'), peticionAlumnoInstance.id])
 //                redirect peticionAlumnoInstance
-				redirect(controller:"alumno", action:"index")
+				redirect(controller:"alumno", action:"principal_alumno")
             }
             '*' { respond peticionAlumnoInstance, [status: CREATED] }
         }
